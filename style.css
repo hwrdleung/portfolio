@@ -1,0 +1,539 @@
+
+body, html, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+}
+
+ a {
+     color: black;
+     transition: color 0.5s;
+     text-decoration: none;
+ }
+
+ a:hover {
+     color: blue;
+     transition: color 0.5s;
+ }
+
+.icon {
+    height: 60px;
+    width: auto;
+}
+
+/* Positioning classes */
+.dead-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.flex-row-evenly {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.flex-row-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap:wrap;
+}
+
+.flex-row-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.flex-col-evenly {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-col-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Containers */
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.text-container {
+    margin: 0;
+    padding: 25px 0;
+}
+
+.text-container p,
+.text-container h1,
+.text-container ul {
+    margin: 20px 50px;
+}
+
+/* Main nav */
+nav {
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: none;
+    color: #FFF;
+    transition: background 1s, color 1s;
+}
+
+nav a:hover {
+    background: blue;
+    color: #FFF;
+    transition: background 1s, color 1s;
+}
+
+#mobile-nav-btn {
+    display: none;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/*  Main content starts here */
+
+section {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;    font-size: 2rem;
+    margin: 25px auto;
+}
+
+#home-section {
+    background: url(assets/crab.JPG) no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#home-section h1 {
+    color: #FFF;
+    font-size: 3.5rem;
+    z-index: 2;
+    text-align: center;
+}
+
+#selfie {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 25px auto;
+    z-index: 2;
+    border: 1px white solid;
+}
+
+#welcome-msg-container {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom right, rgb(64, 64, 250), rgb(0, 0, 168));
+    padding: 50px 0;
+}
+
+#welcome-msg-container h2,
+#welcome-msg-container h3 {
+    width: 60%;
+    max-width: 1000px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 20px auto;
+    color: #FFF;
+}
+
+#about-img-container {
+    height: 200px;
+    min-width: 275px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+#about-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.5s;
+}
+
+#about-img-container img:hover {
+    transform: rotate(15deg) scale(1.4);
+    transition: transform 0.5s;
+}
+
+#about-section {
+    padding: 25px 0;
+}
+
+#about-section p {
+    line-height:1.75;
+    color: rgb(51, 51, 51);
+    max-width: 700px;
+}
+
+#about-section2 p {
+    color: rgb(51, 51, 51);
+}
+
+#about-section2 {
+    padding: 50px 0;
+    background: rgb(192, 217, 228);
+}
+
+#about-section2 h3 {
+    padding-top: 15px;
+    font-family: 'Exo 2', sans-serif;    
+    font-size: 1.5rem;
+    color: blue;
+}
+
+.about-card {
+    max-width: 350px;
+    padding: 20px 0;
+}
+
+.about-card p {
+    line-height: 1.5;
+    margin: 25px;
+}
+
+#skills-section {
+    background: linear-gradient(white, rgb(174, 246, 255));
+    padding: 25px 0;
+}
+
+.skills-icon-group {
+    width: 150px;
+    padding: 10px 0;
+}
+
+#skills-section > .content-container > div {
+    margin: 50px auto;
+}
+
+#work-section {
+    background: linear-gradient(rgb(174, 246, 255), white);
+    min-height: 100vh;
+    padding: 25px 0;
+}
+
+#work-viewer {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    box-shadow: 5px 5px 5px silver;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#work-mobile-nav {
+    display: none;
+}
+
+#work-menu {
+    background: rgb(61, 61, 61);
+    height: 450px;
+    width: 200px;
+}
+
+#work-menu button {
+    border: 0;
+    background: none;
+    color: #FFF;
+    font-size: 1rem;
+    padding: 15px;
+    outline: none;
+    user-select: none;
+    width: 100%;
+    text-align: left;
+    transition: background 0.5s
+}
+
+#work-menu button:hover {
+    cursor: pointer;
+}
+
+#work-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#work-content {
+    height: 450px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    background: rgb(255, 255, 255);
+}
+
+#work-img-container {
+    width: 500px;
+    min-width: 400px;
+    height: 450px;
+    background: black;
+}
+
+#work-img-container img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#work-description-container {
+    width: 500px;
+    min-width: 400px;
+    height: 450px;
+    background: white;
+}
+
+#work-description-container div {
+    width: 100%;
+    padding: 0;
+}
+
+#work-description-textbox{
+    min-height: 200px;
+    max-height: 300px;
+}
+
+#work-description-textbox p{
+    margin: 0 25px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+#work-links-container a {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    padding: 5px;
+    color: #000;
+}
+
+.work-link-icon {
+    height: 30px;
+    width: auto;
+    margin: 0 10px;
+    padding: 10px 0;
+}
+
+#project-name-container {
+    color: #000;
+    height: 50px;
+}
+
+
+#project-nav-container > i,
+#slide-indicator-container > i {
+    margin: 3px;
+    color:rgb(196, 196, 196);
+    transition: color 0.5s;
+}
+
+#project-nav-container > i:hover {
+    color: blue;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+#work-links-container > a:hover {
+    background: lightblue;
+    transition: background 0.5s;
+}
+
+#contact-section {
+    background: linear-gradient(white, transparent), url('assets/beach_water.JPG');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 25px 0;
+}
+
+#contact-email:hover {
+    cursor: pointer;
+}
+
+#contact-alert {
+    padding: 5px 10px;
+    margin: 5px auto;
+    background: rgb(37, 37, 37);
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+@media only screen and (max-width: 1200px){
+    #work-viewer {
+        width: 700px;
+    }
+
+    #work-content-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #work-menu{
+        height: 900px;
+    }
+  
+}
+
+@media only screen and (max-width: 700px){
+    /*  Main nav */
+    #nav-default {
+        display: none;
+    }
+
+    #nav-mobile {
+        position: fixed;
+        width: 80%;
+        top: -200px;
+        right: 0;
+        font-size: 1.3rem;
+        z-index: 99;
+        background: rgb(26, 26, 26);
+        box-shadow: 5px 5px 5px gray;
+        transition: top 0.25s;
+    }
+
+    #nav-mobile a {
+        text-align: right;
+        width: 80%;
+        display: block;
+        color: #FFF;
+        padding: 15px;
+        font-size: 1.5rem;
+    }
+
+    /*  Home section */
+    #home-section h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Welcome msg */
+    #welcome-msg-container h2,
+    #welcome-msg-container h3 {
+        width: 80vw;
+    }
+
+    /*  Work viewer */
+
+    #work-mobile-nav {
+        width: 500px;
+        max-width: 100vw;
+        background: rgb(61, 61, 61);
+        height: 50px;
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 80;
+    }
+
+    #work-mobile-nav-btn {
+       width: 100%;
+       height: 100%;
+       text-align: center;
+    }
+
+    #work-viewer {
+        width: 500px;
+        max-width: 100vw;
+        position: relative;
+        padding-top: 50px;
+    }
+
+    #work-img-container,
+    #work-description-container {
+        height: auto;
+        min-height: 300px;
+        max-width: 100vw;
+    }
+
+    #work-menu {
+        position: absolute;
+        height: auto;
+        max-height: 90vh;
+        width:500px;
+        max-width: 100vw;
+        top: -500px;
+        right: 0;
+        z-index: 79;
+        box-shadow: 5px 5px 5px rgb(36, 36, 36);
+        transition: top 0.25s;
+    }
+
+    #mobile-nav-btn {
+        display: block;
+        color: #FFF;
+        padding: 15px;
+    }
+
+    #work-mobile-nav-btn {
+        color: #FFF;
+    }
+
+    #welcome-msg-section h2, #welcome-msg-section h3 {
+        width: 90%;
+    }
+
+    .text-container p, 
+    .text-container h1, 
+    .text-container ul {
+        margin: 20px 25px;
+    }
+}
+
