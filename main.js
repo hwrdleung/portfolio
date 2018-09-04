@@ -1,7 +1,14 @@
 /*  Mobile main nav menu button */
 let mobileNavBtn = document.getElementById("mobile-nav-btn");
 let navMobile = document.getElementById("nav-mobile");
+let main = document.getElementsByTagName('main');
 let showMobileNavMenu = false;
+
+main[0].addEventListener("click", function(){
+  if(showMobileNavMenu){
+    toggleMobileNavMenu();
+  }
+});
 
 mobileNavBtn.addEventListener("click", function () {
   toggleMobileNavMenu();
@@ -10,6 +17,8 @@ mobileNavBtn.addEventListener("click", function () {
 navMobile.addEventListener("click", function () {
   toggleMobileNavMenu();
 });
+
+
 
 function toggleMobileNavMenu() {
   showMobileNavMenu = !showMobileNavMenu;
