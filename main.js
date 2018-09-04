@@ -18,8 +18,6 @@ navMobile.addEventListener("click", function () {
   toggleMobileNavMenu();
 });
 
-
-
 function toggleMobileNavMenu() {
   showMobileNavMenu = !showMobileNavMenu;
 
