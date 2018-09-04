@@ -1,26 +1,22 @@
 /*  Mobile main nav menu button */
 let mobileNavBtn = document.getElementById("mobile-nav-btn");
 let navMobile = document.getElementById("nav-mobile");
+let showMobileNavMenu = false;
 
-
-// Default view on load
-let showMobileNavMenu = false; 
-
-mobileNavBtn.addEventListener("click", function(){
+mobileNavBtn.addEventListener("click", function () {
   toggleMobileNavMenu();
 });
 
-navMobile.addEventListener("click", function(){
+navMobile.addEventListener("click", function () {
   toggleMobileNavMenu();
 });
-
 
 function toggleMobileNavMenu() {
   showMobileNavMenu = !showMobileNavMenu;
 
-  if(showMobileNavMenu){
+  if (showMobileNavMenu) {
     navMobile.style.top = "45px";
-  } else if (!showMobileNavMenu){
+  } else if (!showMobileNavMenu) {
     navMobile.style.top = "-200px";
   }
 }
@@ -28,25 +24,24 @@ function toggleMobileNavMenu() {
 /*  Mobile work nav menu */
 let workMobileNavBtn = document.getElementById('work-mobile-nav-btn');
 let workMenu = document.getElementById('work-menu');
-
 let showWorkMobileNavMenu = false;
 
-workMobileNavBtn.addEventListener('click', function(){
+workMobileNavBtn.addEventListener('click', function () {
   console.log('click');
   toggleWorkMobileNavMenu();
 });
 
-workMenu.addEventListener('click', function(){
+workMenu.addEventListener('click', function () {
   console.log('click');
   toggleWorkMobileNavMenu();
 });
 
-function toggleWorkMobileNavMenu(){
-   showWorkMobileNavMenu = !showWorkMobileNavMenu;
+function toggleWorkMobileNavMenu() {
+  showWorkMobileNavMenu = !showWorkMobileNavMenu;
 
-  if(showWorkMobileNavMenu){
+  if (showWorkMobileNavMenu) {
     workMenu.style.top = "50px";
-  } else if (!showWorkMobileNavMenu){
+  } else if (!showWorkMobileNavMenu) {
     workMenu.style.top = "-500px";
   }
 }
@@ -102,14 +97,14 @@ let currentProjectIndex = 0;
 let prevSlideIcon = document.getElementById("prev-slide-icon");
 let nextSlideIcon = document.getElementById("next-slide-icon");
 
-prevSlideIcon.addEventListener("click", function() {
+prevSlideIcon.addEventListener("click", function () {
   if (projects[currentProjectIndex].currentSlideIndex > 0) {
     projects[currentProjectIndex].currentSlideIndex--;
     refreshWorkContent();
   }
 });
 
-nextSlideIcon.addEventListener("click", function() {
+nextSlideIcon.addEventListener("click", function () {
   if (
     projects[currentProjectIndex].currentSlideIndex <
     projects[currentProjectIndex].slides.length - 1
@@ -125,16 +120,15 @@ function refreshWorkContent() {
   renderProjectLinks();
 }
 
-/*  The following render functions gets data from project and slide objects according to currentProjectIndex and currentSlideIndex */
-
 function renderWorkMenu() {
+  // Work menu is a list of buttons labled by project title
   let workMenu = document.getElementById("work-menu");
 
-  projects.forEach(function(project, index) {
+  projects.forEach(function (project, index) {
     let newProjectLink = document.createElement("BUTTON");
     newProjectLink.id = "project-link-" + index;
     newProjectLink.innerHTML = project.name;
-    newProjectLink.addEventListener("click", function() {
+    newProjectLink.addEventListener("click", function () {
       // Remove background from current selcted project link
       let currentSelection = document.getElementById(
         "project-link-" + currentProjectIndex
@@ -160,9 +154,12 @@ function renderWorkMenu() {
 }
 
 function renderTextElements() {
+  // Text elements are located in the project description box
+  // This includes the title, and text of the project
   let descriptionTextbox = document.getElementById("work-description-textbox");
   let currentProject = projects[currentProjectIndex];
   let currentSlideIndex = projects[currentProjectIndex].currentSlideIndex;
+
   // Clear old description and set new description
   descriptionTextbox.innerHTML = "";
   let description = currentProject.slides[currentSlideIndex].description;
@@ -210,8 +207,7 @@ function renderSlideIndicator() {
   );
   slideIndicatorContainer.innerHTML = "";
 
-  currentProject.slides.forEach(function(slide, index) {
-    console.log("slide", index);
+  currentProject.slides.forEach(function (slide, index) {
     if (index !== currentSlideIndex) {
       slideIndicatorContainer.appendChild(circle.cloneNode(true));
     } else if (index === currentSlideIndex) {
@@ -226,39 +222,48 @@ function renderProjectLinks() {
   linksContainer.innerHTML = "";
 
   if (currentProject.codepenLink) {
-    let codepenLink = document.createElement("A");
     let codepenIcon = document.createElement("IMG");
-    let caption = document.createTextNode("Source code/Full Project");
     codepenIcon.src = "assets/icons/codepen.svg";
     codepenIcon.className = "work-link-icon";
+
+    let caption = document.createTextNode("Source code/Full Project");
+
+    let codepenLink = document.createElement("A");
     codepenLink.href = currentProject.codepenLink;
     codepenLink.target = "__blank";
+
     codepenLink.appendChild(codepenIcon);
     codepenLink.appendChild(caption);
     linksContainer.appendChild(codepenLink);
   }
 
   if (currentProject.githubLink) {
-    let githubLink = document.createElement("A");
     let githubIcon = document.createElement("IMG");
-    let caption = document.createTextNode("Source code");
     githubIcon.src = "assets/icons/github.svg";
     githubIcon.className = "work-link-icon";
+
+    let caption = document.createTextNode("Source code");
+
+    let githubLink = document.createElement("A");
     githubLink.href = currentProject.githubLink;
     githubLink.target = "__blank";
+
     githubLink.appendChild(githubIcon);
     githubLink.appendChild(caption);
     linksContainer.appendChild(githubLink);
   }
 
   if (currentProject.herokuLink) {
-    let herokuLink = document.createElement("A");
     let herokuIcon = document.createElement("IMG");
-    let caption = document.createTextNode("Full Project");
     herokuIcon.src = "assets/icons/heroku.svg";
     herokuIcon.className = "work-link-icon";
+
+    let caption = document.createTextNode("Full Project");
+
+    let herokuLink = document.createElement("A");
     herokuLink.href = currentProject.herokuLink;
     herokuLink.target = "__blank";
+
     herokuLink.appendChild(herokuIcon);
     herokuLink.appendChild(caption);
     linksContainer.appendChild(herokuLink);
@@ -266,12 +271,15 @@ function renderProjectLinks() {
 
   if (currentProject.squarespaceLink) {
     let squarespaceLink = document.createElement("A");
-    let squarespaceIcon = document.createElement("IMG");
-    let caption = document.createTextNode("Full Project");
-    squarespaceIcon.src = "assets/icons/squarespace.svg";
-    squarespaceIcon.className = "work-link-icon";
     squarespaceLink.href = currentProject.squarespaceLink;
     squarespaceLink.target = "__blank";
+
+    let caption = document.createTextNode("Full Project");
+
+    let squarespaceIcon = document.createElement("IMG");
+    squarespaceIcon.src = "assets/icons/squarespace.svg";
+    squarespaceIcon.className = "work-link-icon";
+
     squarespaceLink.appendChild(squarespaceIcon);
     squarespaceLink.appendChild(caption);
     linksContainer.appendChild(squarespaceLink);
@@ -287,10 +295,23 @@ spfBoost.setProperty(
   "https://www.spfboost.com/"
 );
 
+// Slide 1
 let spfBoostImg1 = "assets/project_images/spf01.jpg";
 let spfBoostText1 =
   `Jess, a graphic designer, wanted to implement some additional design touches to a Squarespace website which her theme's settings did not allow.  She provided me with mockups of her envisioned finished product, and I added the custom CSS necessary to make it happen.  We worked together to deliver an end-product to her client that was pixel-perfect and responsive to all screen sizes.`;
 spfBoost.addNewSlide(spfBoostImg1, spfBoostText1);
+
+// Slide 2
+let spfBoostImg2 = "assets/project_images/spf02.jpg";
+spfBoost.addNewSlide(spfBoostImg2, spfBoostText1);
+
+// Slide 3
+let spfBoostImg3 = "assets/project_images/spf03.jpg";
+spfBoost.addNewSlide(spfBoostImg3, spfBoostText1);
+
+// Slide 4
+let spfBoostImg4 = "assets/project_images/spf04.jpg";
+spfBoost.addNewSlide(spfBoostImg4, spfBoostText1);
 
 // PROJECT: GAMETRADER
 let gameTrader = new Project("Gametrader");
@@ -376,29 +397,31 @@ let pomodoroText1 =
   "Pomodoro Clock is a personal project that I created using HTML, CSS, and Javascript. It functions just like a pomodoro timer--25 minute sessions with 5 minute breaks in between, and includes settings to adjust the alarm's volume, and change the durations of sesions and breaks.";
 pomodoro.addNewSlide(pomodoroImg1, pomodoroText1);
 
-// Push all projects
+// Push all projects projects array
 projects.push(spfBoost);
 projects.push(gameTrader);
 projects.push(twitchStreamers);
 projects.push(calculator);
 projects.push(simon);
 projects.push(pomodoro);
+
+// Render all contents
 renderWorkMenu();
 refreshWorkContent();
 
-// Contact
+// Contact section
 let contactEmail = document.getElementById("contact-email");
 let contactAlert = document.getElementById("contact-alert");
 let copyText = document.getElementById("copyText");
 let alertDuration = 1000;
 
-contactEmail.addEventListener("click", function() {
+contactEmail.addEventListener("click", function () {
   copyText.value = "hwrdleung@gmail.com";
   copyText.select();
   document.execCommand("copy");
 
   contactAlert.style.opacity = "1";
-  setTimeout(function() {
+  setTimeout(function () {
     contactAlert.style.opacity = "0";
   }, alertDuration);
 });
