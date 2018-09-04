@@ -358,7 +358,7 @@ twitchStreamers.setProperty(
 // Slide 1
 let twitchStreamersImg1 = "assets/project_images/twitch01.jpg";
 let twitchStreamersText1 =
-  "Twitch Streamers is a front-end client which uses JQuery to fetch data from twitch.com's API. It then displays that data in a user-friendly interface with HTML and CSS.  The UI allows its users to sort streamers by online, offline, or both. Users can also get updated information by clicking the 'refresh' button. Clicking on a streamer's username opens that streamer's twitch channel in a new browser tab.";
+  "Twitch Streamers is a front-end client which uses JQuery to fetch data from twitch.com's API. It then displays that data in a user-friendly interface with HTML and CSS.  The UI allows its users to sort streamers by online users, offline users, or by all users. Users can also get updated information by clicking the 'refresh' button. Clicking on a streamer's username opens that streamer's twitch channel in a new browser tab.";
 twitchStreamers.addNewSlide(twitchStreamersImg1, twitchStreamersText1);
 
 // PROJECT: JAVASCRIPT CALCULATOR
