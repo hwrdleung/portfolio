@@ -132,6 +132,19 @@ nav a:hover {
     z-index: 1;
 }
 
+#nav-link-text-container {
+    text-overflow: clip; 
+    white-space: nowrap; 
+    overflow: hidden;
+    width: 0;
+    transition: width 0.25s;
+}
+
+#nav-link-text {
+    color: #FFF;
+    margin: 0 20px;
+}
+
 /*  Main content starts here */
 
 section {
@@ -430,7 +443,7 @@ section {
   
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 775px){
     /*  Main nav */
     #nav-default {
         display: none;

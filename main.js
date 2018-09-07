@@ -1,20 +1,53 @@
+/*  Main nav typed-text effect */
+let githubLink = document.getElementById("github-link");
+let codepenLink = document.getElementById("codepen-link");
+let fccLink = document.getElementById("fcc-link");
+let navLinkText = document.getElementById("nav-link-text");
+let navLinkTextContainer = document.getElementById('nav-link-text-container');
+
+// Mouse over
+githubLink.addEventListener('mouseenter', function(){
+  navLinkText.innerHTML = "My Github";
+  navLinkTextContainer.style.width = "150px"
+});
+
+codepenLink.addEventListener('mouseenter', function(){
+  navLinkText.innerHTML = "My Codepen";
+  navLinkTextContainer.style.width = "150px"
+
+});
+
+fccLink.addEventListener('mouseenter', function(){
+  navLinkText.innerHTML = "Freecodecamp";
+  navLinkTextContainer.style.width = "150px"
+});
+
+// Mouse leave
+githubLink.addEventListener('mouseleave', hideNavLinkText);
+codepenLink.addEventListener('mouseleave', hideNavLinkText);
+fccLink.addEventListener('mouseleave', hideNavLinkText);
+
+function hideNavLinkText(){
+  navLinkTextContainer.style.width = "0px";
+}
+
 /*  Mobile main nav menu button */
 let mobileNavBtn = document.getElementById("mobile-nav-btn");
 let navMobile = document.getElementById("nav-mobile");
-let main = document.getElementsByTagName('main');
+let main = document.getElementsByTagName("main");
 let showMobileNavMenu = false;
 
-main[0].addEventListener("click", function(){
-  if(showMobileNavMenu){
+main[0].addEventListener("click", function() {
+  if (showMobileNavMenu) {
     toggleMobileNavMenu();
   }
 });
 
-mobileNavBtn.addEventListener("click", function () {
+mobileNavBtn.addEventListener("click", function() {
   toggleMobileNavMenu();
 });
 
-navMobile.addEventListener("click", function () {
+navMobile.addEventListener("click", function() {
   toggleMobileNavMenu();
 });
 
@@ -29,19 +62,12 @@ function toggleMobileNavMenu() {
 }
 
 /*  Mobile work nav menu */
-let workMobileNavBtn = document.getElementById('work-mobile-nav-btn');
-let workMenu = document.getElementById('work-menu');
+let workMobileNavBtn = document.getElementById("work-mobile-nav-btn");
+let workMenu = document.getElementById("work-menu");
 let showWorkMobileNavMenu = false;
 
-workMobileNavBtn.addEventListener('click', function () {
-  console.log('click');
-  toggleWorkMobileNavMenu();
-});
-
-workMenu.addEventListener('click', function () {
-  console.log('click');
-  toggleWorkMobileNavMenu();
-});
+workMobileNavBtn.addEventListener("click", toggleWorkMobileNavMenu);
+workMenu.addEventListener("click", toggleWorkMobileNavMenu);
 
 function toggleWorkMobileNavMenu() {
   showWorkMobileNavMenu = !showWorkMobileNavMenu;
@@ -104,14 +130,14 @@ let currentProjectIndex = 0;
 let prevSlideIcon = document.getElementById("prev-slide-icon");
 let nextSlideIcon = document.getElementById("next-slide-icon");
 
-prevSlideIcon.addEventListener("click", function () {
+prevSlideIcon.addEventListener("click", function() {
   if (projects[currentProjectIndex].currentSlideIndex > 0) {
     projects[currentProjectIndex].currentSlideIndex--;
     refreshWorkContent();
   }
 });
 
-nextSlideIcon.addEventListener("click", function () {
+nextSlideIcon.addEventListener("click", function() {
   if (
     projects[currentProjectIndex].currentSlideIndex <
     projects[currentProjectIndex].slides.length - 1
@@ -131,11 +157,11 @@ function renderWorkMenu() {
   // Work menu is a list of buttons labled by project title
   let workMenu = document.getElementById("work-menu");
 
-  projects.forEach(function (project, index) {
+  projects.forEach(function(project, index) {
     let newProjectLink = document.createElement("BUTTON");
     newProjectLink.id = "project-link-" + index;
     newProjectLink.innerHTML = project.name;
-    newProjectLink.addEventListener("click", function () {
+    newProjectLink.addEventListener("click", function() {
       // Remove background from current selcted project link
       let currentSelection = document.getElementById(
         "project-link-" + currentProjectIndex
@@ -214,7 +240,7 @@ function renderSlideIndicator() {
   );
   slideIndicatorContainer.innerHTML = "";
 
-  currentProject.slides.forEach(function (slide, index) {
+  currentProject.slides.forEach(function(slide, index) {
     if (index !== currentSlideIndex) {
       slideIndicatorContainer.appendChild(circle.cloneNode(true));
     } else if (index === currentSlideIndex) {
@@ -297,15 +323,11 @@ function renderProjectLinks() {
 
 // PROJECT: SPF BOOST
 let spfBoost = new Project("SPF Boost");
-spfBoost.setProperty(
-  "squarespaceLink",
-  "https://www.spfboost.com/"
-);
+spfBoost.setProperty("squarespaceLink", "https://www.spfboost.com/");
 
 // Slide 1
 let spfBoostImg1 = "assets/project_images/spf01.jpg";
-let spfBoostText1 =
-  `Jess, a graphic designer, wanted to implement some additional design touches to a Squarespace website which her theme's settings did not allow.  She provided me with mockups of her envisioned finished product, and I added the custom CSS necessary to make it happen.  We worked together to deliver an end-product to her client that was pixel-perfect and responsive to all screen sizes.`;
+let spfBoostText1 = `Jess, a graphic designer, wanted to implement some additional design touches to a Squarespace website which her theme's settings did not allow.  She provided me with mockups of her envisioned finished product, and I added the custom CSS necessary to make it happen.  We worked together to deliver an end-product to her client that was pixel-perfect and responsive to all screen sizes.`;
 spfBoost.addNewSlide(spfBoostImg1, spfBoostText1);
 
 // Slide 2
@@ -422,13 +444,13 @@ let contactAlert = document.getElementById("contact-alert");
 let copyText = document.getElementById("copyText");
 let alertDuration = 1000;
 
-contactEmail.addEventListener("click", function () {
+contactEmail.addEventListener("click", function() {
   copyText.value = "hwrdleung@gmail.com";
   copyText.select();
   document.execCommand("copy");
 
   contactAlert.style.opacity = "1";
-  setTimeout(function () {
+  setTimeout(function() {
     contactAlert.style.opacity = "0";
   }, alertDuration);
 });

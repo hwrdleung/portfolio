@@ -3,14 +3,14 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125384902-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125384902-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-125384902-1');
-</script>
+        gtag('config', 'UA-125384902-1');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,15 +29,20 @@
 <body>
     <nav class="flex-row-between">
         <div class="flex-row-evenly">
-            <a href="https://github.com/hwrdleung" target="_blank">
+            <a href="https://github.com/hwrdleung" target="_blank" id="github-link">
                 <i class="fab fa-lg fa-github"></i>
             </a>
-            <a href="https://www.codepen.io/noodles01" target="_blank">
+            <a href="https://www.codepen.io/noodles01" target="_blank" id="codepen-link">
                 <i class="fab fa-lg fa-codepen"></i>
             </a>
-            <a href="https://www.freecodecamp.org/hwrdleung" target="_blank">
+            <a href="https://www.freecodecamp.org/hwrdleung" target="_blank" id="fcc-link">
                 <i class="fab fa-lg fa-free-code-camp"></i>
             </a>
+            <div id="nav-link-text-container">
+                <h3 id="nav-link-text" style="color: white">
+                    <!--Rendered from main.js-->
+                </h3>
+            </div>
         </div>
 
         <!--Hidden in mobile view-->
@@ -46,6 +51,7 @@
             <a href="#skills-section">My Skills</a>
             <a href="#work-section">My Work</a>
             <a href="#contact-section">Contact</a>
+
         </div>
 
         <!--Only shown in mobile view-->
@@ -120,8 +126,7 @@
                     <i class="fas fa-4x fa-cogs"></i>
                     <h3>Performance</h3>
                     <p>
-                        I aim for optimal performance by writing code that functions efficiently and by compressing media files like images and videos
-                        as much as possible to reduce load times for users.
+                        I aim for optimal performance by writing code that functions efficiently, and by compressing media files, such as images, as much as possible to reduce load times for users.
                     </p>
                 </div>
             </div>
