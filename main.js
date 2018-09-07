@@ -3,31 +3,30 @@ let githubLink = document.getElementById("github-link");
 let codepenLink = document.getElementById("codepen-link");
 let fccLink = document.getElementById("fcc-link");
 let navLinkText = document.getElementById("nav-link-text");
-let navLinkTextContainer = document.getElementById('nav-link-text-container');
+let navLinkTextContainer = document.getElementById("nav-link-text-container");
 
 // Mouse over
-githubLink.addEventListener('mouseenter', function(){
+githubLink.addEventListener("mouseenter", function() {
   navLinkText.innerHTML = "My Github";
-  navLinkTextContainer.style.width = "150px"
+  navLinkTextContainer.style.width = "150px";
 });
 
-codepenLink.addEventListener('mouseenter', function(){
+codepenLink.addEventListener("mouseenter", function() {
   navLinkText.innerHTML = "My Codepen";
-  navLinkTextContainer.style.width = "150px"
-
+  navLinkTextContainer.style.width = "150px";
 });
 
-fccLink.addEventListener('mouseenter', function(){
+fccLink.addEventListener("mouseenter", function() {
   navLinkText.innerHTML = "Freecodecamp";
-  navLinkTextContainer.style.width = "150px"
+  navLinkTextContainer.style.width = "150px";
 });
 
 // Mouse leave
-githubLink.addEventListener('mouseleave', hideNavLinkText);
-codepenLink.addEventListener('mouseleave', hideNavLinkText);
-fccLink.addEventListener('mouseleave', hideNavLinkText);
+githubLink.addEventListener("mouseleave", hideNavLinkText);
+codepenLink.addEventListener("mouseleave", hideNavLinkText);
+fccLink.addEventListener("mouseleave", hideNavLinkText);
 
-function hideNavLinkText(){
+function hideNavLinkText() {
   navLinkTextContainer.style.width = "0px";
 }
 
@@ -434,7 +433,7 @@ projects.push(calculator);
 projects.push(simon);
 projects.push(pomodoro);
 
-// Render all contents
+// Render work viewer menu and contents on page load
 renderWorkMenu();
 refreshWorkContent();
 
@@ -444,6 +443,7 @@ let contactAlert = document.getElementById("contact-alert");
 let copyText = document.getElementById("copyText");
 let alertDuration = 1000;
 
+// Copy email address to clipboard
 contactEmail.addEventListener("click", function() {
   copyText.value = "hwrdleung@gmail.com";
   copyText.select();
