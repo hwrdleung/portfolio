@@ -65,8 +65,13 @@ let workMobileNavBtn = document.getElementById("work-mobile-nav-btn");
 let workMenu = document.getElementById("work-menu");
 let showWorkMobileNavMenu = false;
 
-workMobileNavBtn.addEventListener("click", toggleWorkMobileNavMenu);
-workMenu.addEventListener("click", toggleWorkMobileNavMenu);
+workMobileNavBtn.addEventListener("click", function(){
+  toggleWorkMobileNavMenu();
+});
+
+workMenu.addEventListener("click", function(){
+  toggleWorkMobileNavMenu();
+});
 
 function toggleWorkMobileNavMenu() {
   showWorkMobileNavMenu = !showWorkMobileNavMenu;
