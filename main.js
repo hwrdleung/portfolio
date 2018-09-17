@@ -261,7 +261,7 @@ function renderProjectLinks() {
   if (currentProject.codepenLink) {
     let codepenIcon = document.createElement("IMG");
     codepenIcon.src = "assets/icons/codepen.svg";
-    codepenIcon.className = "work-link-icon";
+    codepenIcon.className = "work-link-icon ";
 
     let caption = document.createTextNode("Source code/Full Project");
 
