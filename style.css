@@ -110,7 +110,7 @@ nav a:hover {
 
 #splash {
     height: 100vh;
-    background: linear-gradient(60deg, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8)), url('assets/crab.jpg');
+    background: linear-gradient(60deg, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8)), url('assets/crab.JPG');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
