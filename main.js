@@ -1,7 +1,70 @@
 import Project from './project.js';
 import TextTyper from './textTyper.js';
+import CodeViewer from './codeViewer.js';
 
-const projectsContainer = document.getElementById('projects-container');
+// Resume viewer controller
+let resumeLink = document.getElementById('resume-link');
+let resumeViewerContainer = document.getElementById('resume-viewer');
+let resumeViewerCloseBtn = document.getElementById('resume-viewer-close-btn');
+let resumeViewerClosedPos = `-${resumeViewerContainer.clientWidth}px`;
+
+// On page load, initialize resume viewer to 'closed' position
+resumeViewerContainer.style.left = resumeViewerClosedPos;
+
+resumeViewerCloseBtn.addEventListener('click', () => {
+  resumeViewerContainer.style.left = resumeViewerClosedPos;
+});
+
+resumeLink.addEventListener('click', () => {
+  if(codeViewerContainer.style.left === '0px') codeViewerContainer.style.left = codeViewerClosedPos;
+
+  switch(resumeViewerContainer.style.left){
+    case '0px' : resumeViewerContainer.style.left = resumeViewerClosedPos; break;
+    case resumeViewerClosedPos : resumeViewerContainer.style.left = '0px'; break;
+  }
+});
+
+// Code Viewer controller
+let codeLink = document.getElementById('code-link');
+let codeViewerContainer = document.getElementById('code-viewer');
+let codeViewerCloseBtn = document.getElementById('code-viewer-close-btn');
+let codeViewerClosedPos = `-${codeViewerContainer.clientWidth}px`
+
+// On page load, initialize Code Viewer to 'closed' position
+codeViewerContainer.style.left = codeViewerClosedPos;
+
+codeViewerCloseBtn.addEventListener('click', () => {
+  codeViewerContainer.style.left = codeViewerClosedPos;
+})
+
+codeLink.addEventListener('click', () => {
+  if(resumeViewerContainer.style.left === '0px') resumeViewerContainer.style.left = resumeViewerClosedPos;
+
+  switch(codeViewerContainer.style.left) {
+    case '0px' : codeViewerContainer.style.left = codeViewerClosedPos; break;
+    case codeViewerClosedPos : codeViewerContainer.style.left = '0px'; break;
+  }
+});
+
+// Populate code Viewer with projects and render to DOM
+let codeViewer = new CodeViewer(codeViewerContainer);
+
+// codeViewer.addCodeProject({
+//   name: "Test project",
+//   html: ``,
+//   css: ``,
+//   js: ``
+// });
+
+codeViewer.addCodeProject({
+  name: "Test project2",
+  html: ``,
+  css: ``,
+  js: `https://gist.github.com/hwrdleung/589c48ad5bf022c32f03ae9179b564fe.js`
+});
+
+codeViewer.render();
+
 const splashIcons = Array.from(document.getElementsByClassName('icon'));
 const splashTyperContainer = document.getElementById('typer-container');
 let splashTyper = new TextTyper(splashTyperContainer, 50);
@@ -30,6 +93,7 @@ splashIcons.forEach(icon => {
 })
 
 // Create and render Projects
+const projectsContainer = document.getElementById('projects-container');
 // Project: GameTrader
 let gameTrader = new Project('GameTrader');
 gameTrader.setGithub('https://www.github.com/hwrdleung/gametrade');

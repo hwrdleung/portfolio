@@ -17,7 +17,6 @@ export default class Project {
     projectTitle = document.createElement('h3');
     image = document.createElement('img');
     descriptionText = document.createElement('div');
-
     prevPageBtn = document.createElement('i');
     nextPageBtn = document.createElement('i');
     circle = document.createElement('i');
@@ -66,9 +65,8 @@ export default class Project {
         this.projectLink = url;
     }
 
+    // This function changes the innerHTML for dynamic content
     refresh() {
-        // This function changes the innerHTML for dynamic content
-
         // Set image.src
         this.image.src = this.pages[this.currentPage].imageUrl;
 
