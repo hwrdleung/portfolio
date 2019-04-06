@@ -71,7 +71,7 @@ splashIcons.forEach(icon => {
 const resumeLink = document.getElementById('resume-link');
 const resumeViewerContainer = document.getElementById('resume-viewer');
 const resumeViewerCloseBtn = document.getElementById('resume-viewer-close-btn');
-const resumeViewerClosedPos = '-' + resumeViewerContainer.offsetWidth * 1.5 + 'px';
+const resumeViewerClosedPos = '-' + resumeViewerContainer.offsetWidth * 3 + 'px';
 
 // On page load, initialize resume viewer to 'closed' position
 resumeViewerContainer.style.left = resumeViewerClosedPos;
@@ -105,7 +105,7 @@ resumeLink.addEventListener('click', () => {
 const codeLink = document.getElementById('code-link');
 const codeViewerContainer = document.getElementById('code-viewer');
 const codeViewerCloseBtn = document.getElementById('code-viewer-close-btn');
-const codeViewerClosedPos = '-' + codeViewerContainer.offsetWidth * 1.5 + 'px';
+const codeViewerClosedPos = '-' + codeViewerContainer.offsetWidth * 3 + 'px';
 let codeViewer = new CodeViewer();
 
 // On page load, initialize Code Viewer to 'closed' position

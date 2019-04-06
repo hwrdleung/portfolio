@@ -569,6 +569,8 @@ nav a:hover {
         width: 100vw;
         height: 100vh;
     }
+
+
 }
 
 @media only screen and (max-width: 450px) {
@@ -605,4 +607,16 @@ nav a:hover {
     .image-container {
         height: 300px;
     }
+
+    /* Code-viewer */
+    .CodeMirror,    
+    .cv-menu button,
+    .cv-view-btns-container button {
+        font-size: 0.7rem;
+    }
+
+        /* Contact */
+        #mailto-link {
+            font-size: 7vw;
+        }
 }
