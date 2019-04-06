@@ -262,7 +262,7 @@ nav a:hover {
 /*----------------------------*/
 
 #splash {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(60deg, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8)), url('assets/crab.JPG');
     background-position: center;
     background-repeat: no-repeat;
@@ -275,6 +275,7 @@ nav a:hover {
     line-height: 5rem;
     font-family: 'Rock Salt', cursive;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
 }
 
 #splash-textbox {
@@ -385,7 +386,6 @@ nav a:hover {
 .image-container {
     width: 500px;
     max-width: 95vw;
-    max-height: 50vh;
     height: 350px;
     background: #000;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -403,7 +403,6 @@ nav a:hover {
 .description-container {
     width: 500px;
     max-width: 95vw;
-    max-height: 50vh;
     height: 350px;
     background: #FFF;
     padding: 10px;
@@ -474,7 +473,7 @@ nav a:hover {
 /*----------------------------*/
 
 #contact-links {
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
     background: linear-gradient(rgb(255, 255, 255), transparent), url('assets/beach_water.JPG');
     background-position: bottom;
@@ -599,5 +598,10 @@ nav a:hover {
     }
     .description-text, .description-text ul li {
         font-size: 0.8rem;
+    }
+
+    .description-container,
+    .image-container {
+        height: 300px;
     }
 }
