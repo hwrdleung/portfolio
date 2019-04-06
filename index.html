@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
+    <title>Howard Leung | Portfolio</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Howard Leung | Portfolio</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125384902-1"></script>
@@ -31,13 +32,14 @@
     </nav>
 
     <section id="splash">
-        <div class="icon-row">
-            <!--Spacer-->
-        </div>
-
         <h1 id="name">Howard Leung</h1>
+
         <div id="splash-textbox" class="flex-center">
-            <span id="typer-container"></span><span id="cursor">|</span>
+            <span id="typer-container">
+                <!--TextTyper renders here-->
+            </span>
+
+            <span id="cursor">|</span>
         </div>
 
         <div class="icons-container flex-row-evenly">
@@ -53,10 +55,8 @@
                 <i class="fab icon fa-4x fa-angular"></i>
                 <i class="fab icon fa-4x fa-node"></i>
                 <img class="icon mongodb" src="assets/icons/mongodb.svg">
+            </span>
         </div>
-        </span>
-
-
     </section>
 
     <section id="welcome">
@@ -65,20 +65,19 @@
 
     <section id="about-me">
         <div class="flex-row-evenly">
-            <img src="assets/laptop_bg.jpg">
+            <span><img src="assets/laptop_bg.jpg"></span>
 
             <div id="about-me-text">
                 <h2>About Me</h2>
                 <p>I started learning to code about a year and a half ago on freecodecamp.org and various other online
-                    resources.
-                    What I love about web development is that the learning never stops, and each project is a new
-                    challenge.
-                    I enjoy the process of converting an idea into a real finished product.</p>
+                    resources. What I love about web development is that the learning never stops, and each project is a
+                    new challenge. I enjoy the process of converting an idea into a real finished product.</p>
             </div>
         </div>
 
         <div id="skillset">
             <h2>My Skill Set:</h2>
+
             <ul>
                 <li>Web Development fundamentals: HTML, CSS, and Javascript (ES6)</li>
                 <li>Conversion of mockups into code</li>
@@ -95,37 +94,53 @@
 
     <section id="my-work">
         <h2>My Work</h2>
+
         <div id="projects-container">
-            <!--Render project blocks here from main.js-->
+            <!--Render projects here from main.js-->
         </div>
     </section>
 
     <section id="contact-links">
         <h2>Contact / Links</h2>
+
+        <a id="mailto-link" href="mailto:hwrdleung@gmail.com">hwrdleung@gmail.com</a>
+
         <div id="links-container">
-            <a id="email-link">Email</a>
+            <a id="copy-email-link">Copy<br>Email</a>
             <a id="github-link" href="https://github.com/hwrdleung" target="__blank">Github</a>
             <a id="codepen-link" href="https://codepen.io/noodles01/" target="__blank">Codepen</a>
             <a id="resume-link">Resume</a>
             <a id="code-link">Code Samples</a>
         </div>
+
+        <input type="text" value="hwrdleung@gmail.com" id="copy-email-input" style="opacity: 0">
     </section>
 
     <div id="code-viewer" class="pop-out">
-        <button id="code-viewer-close-btn">Close</button>
+        <div class="flex-row-between pop-out-top-bar">
+            <h1>Code Samples</h1>
+            <button id="code-viewer-close-btn" class="pop-out-close-btn"><i class="fas fa-2x fa-times"></i></button>
+        </div>
         <!-- Render code viewer here -->
     </div>
 
-    <div id="resume-viewer" class="pop-out">
-            <button id="resume-viewer-close-btn">Close</button>
-        <h1>Resume</h1>
+    <div id="resume-viewer" class="pop-out flex-center">
+        <div class="flex-row-between pop-out-top-bar">
+            <h1>Resume</h1>
+            <button id="resume-viewer-close-btn" class="pop-out-close-btn"><i class="fas fa-2x fa-times"></i></button>
+        </div>
+
+        <iframe src="assets/resume.pdf"></iframe>
     </div>
 
-    <script type="module" src="codeViewer.js"></script>
-    <script type="module" src="textTyper.js"></script>
-    <script type="module" src="project.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-html.js"></script>
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/css/css.js"></script>
     <script type="module" src="main.js"></script>
 </body>
 
 </html>
-
