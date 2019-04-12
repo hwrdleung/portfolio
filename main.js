@@ -56,7 +56,7 @@ splashIcons.forEach(icon => {
     if (classList.includes('fa-html5')) splashTyper.typeText('HTML5');
     if (classList.includes('fa-css3-alt')) splashTyper.typeText('CSS3');
     if (classList.includes('fa-js')) splashTyper.typeText('Javascript');
-    if (classList.includes('jquery')) splashTyper.typeText('JQuery');
+    if (classList.includes('jquery')) splashTyper.typeText('jQuery');
     if (classList.includes('bootstrap')) splashTyper.typeText('Bootstrap');
     if (classList.includes('fa-angular')) splashTyper.typeText('Angular');
     if (classList.includes('mongodb')) splashTyper.typeText('MongoDB');

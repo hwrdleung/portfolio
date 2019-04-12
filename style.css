@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Montserrat|Rock+Salt');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Montserrat|Rock+Salt');
 
 /* Define defaults-------- */
 
@@ -11,7 +11,7 @@
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #000;
 }
@@ -544,6 +544,12 @@ nav a:hover {
     #welcome h2 {
         font-size: 4vw;
     }
+
+    nav {
+        justify-content: center;
+        align-items: center;
+    }
+
     /* Splash */
     #name {
         font-size: 8vw;
@@ -601,6 +607,7 @@ nav a:hover {
     }
     .description-text, .description-text ul li {
         font-size: 0.8rem;
+        line-height: 1.4;
     }
 
     .description-container,
