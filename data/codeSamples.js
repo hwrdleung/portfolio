@@ -146,7 +146,7 @@ export default [
             <script type="module" src="main.js"></script>
         </body>
         </html>`,
-        "css": `@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Montserrat|Rock+Salt');
+        "css": `@import url('https://fonts.googleapis.com/css?family=Roboto|Montserrat|Rock+Salt');
 
         /* Define defaults-------- */
         
@@ -159,7 +159,7 @@ export default [
         }
         
         body {
-            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 1rem;
             color: #000;
         }
@@ -261,7 +261,7 @@ export default [
             z-index: 100;
             background: #FFF;
             transition: left 0.2s;
-            box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.7);
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
             box-sizing: border-box;
         }
         
@@ -395,6 +395,7 @@ export default [
             z-index: 10;
             width: 100%;
             max-width: 100vw;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
         }
         
         nav a {
@@ -410,7 +411,7 @@ export default [
         /*----------------------------*/
         
         #splash {
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(60deg, rgba(0, 0, 0, 0.8), transparent, rgba(0, 0, 0, 0.8)), url('assets/crab.JPG');
             background-position: center;
             background-repeat: no-repeat;
@@ -423,6 +424,7 @@ export default [
             line-height: 5rem;
             font-family: 'Rock Salt', cursive;
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
         }
         
         #splash-textbox {
@@ -533,7 +535,6 @@ export default [
         .image-container {
             width: 500px;
             max-width: 95vw;
-            max-height: 50vh;
             height: 350px;
             background: #000;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -551,7 +552,6 @@ export default [
         .description-container {
             width: 500px;
             max-width: 95vw;
-            max-height: 50vh;
             height: 350px;
             background: #FFF;
             padding: 10px;
@@ -622,7 +622,7 @@ export default [
         /*----------------------------*/
         
         #contact-links {
-            height: 80vh;
+            min-height: 80vh;
             width: 100%;
             background: linear-gradient(rgb(255, 255, 255), transparent), url('assets/beach_water.JPG');
             background-position: bottom;
@@ -692,6 +692,12 @@ export default [
             #welcome h2 {
                 font-size: 4vw;
             }
+        
+            nav {
+                justify-content: center;
+                align-items: center;
+            }
+        
             /* Splash */
             #name {
                 font-size: 8vw;
@@ -717,6 +723,8 @@ export default [
                 width: 100vw;
                 height: 100vh;
             }
+        
+        
         }
         
         @media only screen and (max-width: 450px) {
@@ -747,7 +755,25 @@ export default [
             }
             .description-text, .description-text ul li {
                 font-size: 0.8rem;
+                line-height: 1.4;
             }
+        
+            .description-container,
+            .image-container {
+                height: 300px;
+            }
+        
+            /* Code-viewer */
+            .CodeMirror,    
+            .cv-menu button,
+            .cv-view-btns-container button {
+                font-size: 0.7rem;
+            }
+        
+                /* Contact */
+                #mailto-link {
+                    font-size: 7vw;
+                }
         }
         `,
         "js": `import ProjectViewer from './models/projectViewer.js';
