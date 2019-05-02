@@ -1,9 +1,9 @@
 export default class ProjectViewer {
     constructor(name) {
         this.name = name;
-        this.github;
-        this.codepen;
-        this.projectLink;
+        this.github = '';
+        this.codepen = '';
+        this.projectLink = '';
         this.currentPage = 0;
         this.pages = [];
 

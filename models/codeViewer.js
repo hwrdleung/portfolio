@@ -11,17 +11,6 @@ export default class CodeViewer {
   }
 
   addCodeProject(codeProject) {
-    /*
-        projects will follow this model:
-        {
-            name: name as string,
-            html: github gist link,
-            css: github gist link,
-            js: github gist link,
-            view: 'HTML' or 'CSS' or 'JS'
-        }
-    */
-
     // Initialize view and push to this.projects
     codeProject.view = codeProject.html ? "HTML" : codeProject.css ? "CSS" : "JS";
     this.projects.push(codeProject);

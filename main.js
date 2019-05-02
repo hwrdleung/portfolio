@@ -36,7 +36,6 @@ copyEmailLink.addEventListener('click', () => {
     emailTyper.clear();
     copyEmailLink.innerHTML = "Copy<br>Email";
   }, 1500);
-
 });
 
 // Splash section TextTyper controller
