@@ -21,7 +21,7 @@ export default [
                 text: `Twitter Clone's front-end was built in React and utilizes modular and reusable components.  It uses Redux as its state management system and Bootstrap for styling.  The back-end consists of a NodeJS server, a MongoDB database for storing user data, and Firebase Storage for storing images.`
             },
             {
-                imageUrl: 'assets/project_images/twitterClone04.jpg',
+                imageUrl: 'assets/project_images/twitterClone05.jpg',
                 text: `Twitter Clone is a personal project that I created to learn the basics of the React framework and ecosystem.  From working on this project, I gained a better understanding of modular code, the Redux pattern, and the capabilities of Bootstrap.`
             }
         ]
