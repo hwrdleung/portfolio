@@ -7,11 +7,11 @@ export default [{
     },
     {
         imageUrl: 'assets/project_images/integration02.png',
-        text: `IntegrationPOS automatically generates a public storefront for each account, which enables its users to receive online orders from their customers.  Each storefront comes with a landing page, header, navigation bar, cart, product cards, and footer.  It also has a built-in curbside-alert system which their customers can use to notify the store of their arrival.  `
+        text: `IntegrationPOS automatically generates a public storefront for each account, which enables its users to receive online orders from their customers.  Each storefront comes with a landing page, header, navigation bar, cart, product cards, and footer.  It also has a built-in curbside-pickup alert system which their customers can use to notify the store of their arrival.  `
     },
     {
         imageUrl: 'assets/project_images/integration07.png',
-        text: `Users can add new product listings and edit existing ones by modifying a simple form.  The data that is entered here is exactly how the product listing will appear the public storefront.  Product statuses can be easily set to either online or offline, and product quantities are automatically deducted as necessary, as orders are placed.`
+        text: `Users can add new product listings and edit existing ones by modifying a simple form.  The data that is entered here is exactly how the product listing will appear in the public storefront.  Product statuses can be easily set to either online or offline, and product quantities are automatically deducted as necessary, as orders are placed.`
     },
     {
         imageUrl: 'assets/project_images/integration04.png',
@@ -31,7 +31,7 @@ export default [{
     },
     {
         imageUrl: 'assets/project_images/integration01.png',
-        text: `I created IntegrationPOS to further practice and improve my web development skills.  Working on this project gave me insight into each step of the development process from idea conception, to design, to implementation, and finally to deployment.  IntegrationPOS was built with React/redux, NodeJS/Express, MongoDB, Socket.io. for real-time data transfer, and Firebase storage for image hosting.`
+        text: `I created IntegrationPOS to further practice and improve my web development skills.  Working on this project gave me insight into each step of the development process from idea conception, to design, to implementation, and finally to deployment.  IntegrationPOS was built with React/redux, NodeJS/Express, MongoDB, Socket.io for real-time data transfer, and Firebase storage for image hosting.`
     }
     ]
 }, {
