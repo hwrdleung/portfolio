@@ -1,22 +1,58 @@
 export default [{
-        name: 'Creative Studio',
-        github: 'https://www.github.com/hwrdleung/deckbuilder2',
-        projectLink: 'https://deckbuilder2.herokuapp.com/',
-        pages: [{
-                imageUrl: 'assets/project_images/creativeStudio01.jpg',
-                text: `Creative Studio is a presentation-builder single-page-application that brings Google Fonts library, Pixabay image search, image editing, and the browser's CSS styling capabilities conveniently into one place.  Presentations can be saved online for later access, or exported to PNG and PSD formats.`
-            },
-            {
-                imageUrl: 'assets/project_images/creativeStudio02.jpg',
-                text: `Creative Studio serves as a sandbox where users can fine-tune their font styles and perform image manipulation as they create their slides.  Users can also save their font and image styles as presets, which can be re-used throughout their presentation.`
-            },
-            {
-                imageUrl: 'assets/project_images/creativeStudio03.jpg',
-                text: `Creative Studio's front-end was built with Angular, and the back-end was built with NodeJS.  Users' account and project data saves to a MongoDB database while images are stored and served via Google Firebase Storage.`
-            },
-            {
-                imageUrl: 'assets/project_images/creativeStudio04.jpg',
-                text: `Other libraries and API's include: 
+    name: 'IntegrationPOS',
+    projectLink: 'https://integrationpos.herokuapp.com/',
+    pages: [{
+        imageUrl: 'assets/project_images/integration01.png',
+        text: `IntegrationPOS is an all-in-one system designed to help small-business restaurants get their businesses online.  Features include a public online storefront with a fully functioning cart, user dashboard, product/order management systems, built-in POS, and more.`
+    },
+    {
+        imageUrl: 'assets/project_images/integration02.png',
+        text: `IntegrationPOS automatically generates a public storefront for each account, which enables its users to receive online orders from their customers.  Each storefront comes with a landing page, header, navigation bar, cart, product cards, and footer.  It also has a built-in curbside-alert system which their customers can use to notify the store of their arrival.  `
+    },
+    {
+        imageUrl: 'assets/project_images/integration07.png',
+        text: `Users can add new product listings and edit existing ones by modifying a simple form.  The data that is entered here is exactly how the product listing will appear the public storefront.  Product statuses can be easily set to either online or offline, and product quantities are automatically deducted as necessary, as orders are placed.`
+    },
+    {
+        imageUrl: 'assets/project_images/integration04.png',
+        text: `The theme editor is simple and easy to use.  Changes to the UI settings appear in real-time, allowing the user to preview their changes before saving them.  Users are able to change their store's fonts, colors, and background images, as well as each element's spacing, borders, and shadows.`
+    },
+    {
+        imageUrl: 'assets/project_images/integration05.png',
+        text: `A built-in POS system enables users to place orders, modifiy orders and products, split orders into seperate transactions, and process payments without having to go through the public storefront.  The POS was designed to be familiar to those who have worked in the food-service industry.`
+    },
+    {
+        imageUrl: 'assets/project_images/integration06.png',
+        text: `The order manager handles all incoming orders from both the public storefront, and the POS.  Orders are displayed as itemized "order tickets" which contain all the information required to fullfill the order.  Ticket statuses can be set with the touch of a button, which helps in keeping tickets organized.`
+    },
+    {
+        imageUrl: 'assets/project_images/integration08.png',
+        text: `An intuitive dashboard provides an overview of the store.  The user can use the status control panel to bring their store online or offline, as well as enable or disable their cart and curbside-pickup systems.  Charts provide sales data by the week, month, or year, and orders by fullfillment type.  It also gives the user easy access to changing their logo, contact information, and business hours.`
+    },
+    {
+        imageUrl: 'assets/project_images/integration01.png',
+        text: `I created IntegrationPOS to further practice and improve my web development skills.  Working on this project gave me insight into each step of the development process from idea conception, to design, to implementation, and finally to deployment.  IntegrationPOS was built with React/redux, NodeJS/Express, MongoDB, Socket.io. for real-time data transfer, and Firebase storage for image hosting.`
+    }
+    ]
+}, {
+    name: 'Creative Studio',
+    github: 'https://www.github.com/hwrdleung/deckbuilder2',
+    projectLink: 'https://deckbuilder2.herokuapp.com/',
+    pages: [{
+        imageUrl: 'assets/project_images/creativeStudio01.jpg',
+        text: `Creative Studio is a presentation-builder single-page-application that brings Google Fonts library, Pixabay image search, image editing, and the browser's CSS styling capabilities conveniently into one place.  Presentations can be saved online for later access, or exported to PNG and PSD formats.`
+    },
+    {
+        imageUrl: 'assets/project_images/creativeStudio02.jpg',
+        text: `Creative Studio serves as a sandbox where users can fine-tune their font styles and perform image manipulation as they create their slides.  Users can also save their font and image styles as presets, which can be re-used throughout their presentation.`
+    },
+    {
+        imageUrl: 'assets/project_images/creativeStudio03.jpg',
+        text: `Creative Studio's front-end was built with Angular, and the back-end was built with NodeJS.  Users' account and project data saves to a MongoDB database while images are stored and served via Google Firebase Storage.`
+    },
+    {
+        imageUrl: 'assets/project_images/creativeStudio04.jpg',
+        text: `Other libraries and API's include: 
                 <ul>
                   <li>HTML2CANVAS for conversion of HTML to images</li>
                   <li>jsPDF for conversion of images to PDF</li>
@@ -24,84 +60,12 @@ export default [{
                   <li>Pixabay image search API</li>
                   <li>Google Fonts API</li>
                 </ul>`
-            },
-            {
-                imageUrl: 'assets/project_images/creativeStudio05.jpg',
-                text: `Creative Studio is a personal project that I created to gain a better understanding of object-oriented programming, MVC architecture, and modular code.  Working on this project has also taught me about state management, asynchronous Javascript, and the importance of planning before writing any code.`
-            }
-        ]
     },
     {
-        name: 'Twitter Clone',
-        github: 'https://www.github.com/hwrdleung/twitter-clone',
-        projectLink: 'https://twitter-clone-mern.herokuapp.com',
-        pages: [{
-                imageUrl: 'assets/project_images/twitterClone01.jpg',
-                text: `Twitter Clone is a full-stack social web application based on the functionality of Twitter.  Users can post their own "tweets", view their friends' tweets, "like" and reply to tweets, as well as "follow" other users.`
-            },
-            {
-                imageUrl: 'assets/project_images/twitterClone02.jpg',
-                text: `Once registered, users will be brought to their dashboard, where they will be able to post new tweets, change their photos, accept "follow requests" from other users, and view a feed of their friends' recent tweets.`
-            },
-            {
-                imageUrl: 'assets/project_images/twitterClone03.jpg',
-                text: `Users have full control over their account.  On the "settings" page, users can modify their personal information, change their privacy settings, set a new password, or delete their account if they wish to.  Enabling the "private tweets" setting ensures that only their followers are able to view their tweets.`
-            },
-            {
-                imageUrl: 'assets/project_images/twitterClone04.jpg',
-                text: `Twitter Clone's front-end was built in React and utilizes modular and reusable components.  It uses Redux as its state management system and Bootstrap for styling.  The back-end consists of a NodeJS server, a MongoDB database for storing user data, and Firebase Storage for storing images.`
-            },
-            {
-                imageUrl: 'assets/project_images/twitterClone05.jpg',
-                text: `Twitter Clone is a personal project that I created to learn the basics of the React framework and ecosystem.  From working on this project, I gained a better understanding of modular code, the Redux pattern, and the capabilities of Bootstrap.`
-            }
-        ]
-    },
-    {
-        name: 'GameTrader',
-        github: 'https://www.github.com/hwrdleung/gametrade',
-        projectLink: 'https://gametrader.herokuapp.com/',
-        pages: [{
-                imageUrl: 'assets/project_images/gametrader01.jpg',
-                text: `GameTrader is a full-stack CRUD application that manages a mock video game trading club.  Its users can publicly list their video games and initiate "trade requests" with other users.  GameTrader helps its users keep track of their trade activity and connect with other gamers.`
-            },
-            {
-                imageUrl: 'assets/project_images/gametrader03.jpg',
-                text: `GameTrader requires its users to register and has a functioning registration system that secures sensitive data--passwords are never saved in plain-text and email addresses are only displayed with the user's permission.`
-            },
-            {
-                imageUrl: 'assets/project_images/gametrader04.jpg',
-                text: `The "My Trades" dashboard is where all trade-related activity is displayed.  It's divided into four sections:  "Incoming Trades", "Outgoing Requests", "Active Trades", and "Trade History".  When users recieve an incoming trade request, they can accept the request by choosing a game from the initiator.  The trade then moves to the "Active Trades" section.  All activity is logged in the "Trade History".`
-            },
-            {
-                imageUrl: 'assets/project_images/gametrader05.jpg',
-                text: `All users have a profile page where other users can view their video game collection, initiate trade requests, and post reviews of their trading experience.  To avoid discrepencies, profile pages only display games that are available for trade.`
-            },
-            {
-                imageUrl: 'assets/project_images/gametrader02.jpg',
-                text: `GameTrader is a personal project that I created to practice full-stack web development, and to learn more about how the front-end, the back-end, and the database all work together to deliver a positive user experience.  It was built with an Angular front-end, a NodeJS back-end, and a MongoDB database.  In addition, it fetches video game data and images from igdb.com's video game database API.`
-            }
-        ]
-    },
-    {
-        name: 'spfBoost.com',
-        projectLink: 'https://www.spfboost.com/',
-        pages: [{
-                imageUrl: 'assets/project_images/spf01.jpg',
-                text: `spfboost.com is a Squarespace website that <a href="https://www.jesslikes.work/">Jess</a>, graphic designer, created for her client.  For this project, Jess provided me with PSD mockups of her design, and I was responsible for implementing it by modifying the website's "custom CSS".`
-            },
-            {
-                imageUrl: 'assets/project_images/spf02.jpg',
-                text: `spfboost.com is a Squarespace website that <a href="https://www.jesslikes.work/">Jess</a>, graphic designer, created for her client.  For this project, Jess provided me with PSD mockups of her design, and I was responsible for implementing it by modifying the website's "custom CSS".`
-            },
-            {
-                imageUrl: 'assets/project_images/spf03.jpg',
-                text: `spfboost.com is a Squarespace website that <a href="https://www.jesslikes.work/">Jess</a>, graphic designer, created for her client.  For this project, Jess provided me with PSD mockups of her design, and I was responsible for implementing it by modifying the website's "custom CSS".`
-            },
-            {
-                imageUrl: 'assets/project_images/spf04.jpg',
-                text: `spfboost.com is a Squarespace website that <a href="https://www.jesslikes.work/">Jess</a>, graphic designer, created for her client.  For this project, Jess provided me with PSD mockups of her design, and I was responsible for implementing it by modifying the website's "custom CSS".`
-            }
-        ]
+        imageUrl: 'assets/project_images/creativeStudio05.jpg',
+        text: `Creative Studio is a personal project that I created to gain a better understanding of object-oriented programming, MVC architecture, and modular code.  Working on this project has also taught me about state management, asynchronous Javascript, and the importance of planning before writing any code.`
     }
+    ]
+},
+
 ]
