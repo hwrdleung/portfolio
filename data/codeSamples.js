@@ -2,150 +2,145 @@ export default [
     {
         "name": "Portfolio Source Code",
         "html": `<!DOCTYPE html>
-        <html lang="en">
-        
-        <head>
-            <title>Howard Leung | Portfolio</title>
-        
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-            <link rel="stylesheet" type="text/css" href="style.css">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-                integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-            <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-            <link rel="stylesheet" href="codemirror/lib/codemirror.css">
-        
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125384902-1"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag() { dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'UA-125384902-1');
-            </script>
-        </head>
-        
-        <body>
-            <nav class="flex-row-right">
-                <a href="#about-me">About Me</a>
-                <a href="#my-work">My Work</a>
-                <a href="#contact-links">Contact/Links</a>
-            </nav>
-        
-            <section id="splash">
-                <h1 id="name">Howard Leung</h1>
-        
-                <div id="splash-textbox" class="flex-center">
-                    <span id="typer-container">
-                        <!--TextTyper renders here-->
-                    </span>
-        
-                    <span id="cursor">|</span>
-                </div>
-        
-                <div class="icons-container flex-row-evenly">
-                    <span class="icon-row flex-row-evenly">
-                        <i class="fab icon fa-4x fa-html5"></i>
-                        <i class="fab icon fa-4x fa-css3-alt"></i>
-                        <i class="fab icon fa-4x fa-js"></i>
-                        <img class="icon jquery" src="assets/icons/jquery.svg">
-                    </span>
-        
-                    <span class="icon-row flex-row-evenly">
-                        <img class="icon bootstrap" src="assets/icons/bootstrap.svg">
-                        <i class="fab icon fa-4x fa-angular"></i>
-                        <i class="fab icon fa-4x fa-node"></i>
-                        <img class="icon mongodb" src="assets/icons/mongodb.svg">
-                    </span>
-                </div>
-            </section>
-        
-            <section id="welcome">
-                <h2>Hello and welcome to my portfolio!</h2>
-            </section>
-        
-            <section id="about-me">
-                <div class="flex-row-evenly">
-                    <span><img src="assets/laptop_bg.jpg"></span>
-        
-                    <div id="about-me-text">
-                        <h2>About Me</h2>
-                        <p>I started learning to code about a year and a half ago on freecodecamp.org and various other online
-                            resources. What I love about web development is that the learning never stops, and each project is a
-                            new challenge. I enjoy the process of converting an idea into a real finished product.</p>
-                    </div>
-                </div>
-        
-                <div id="skillset">
-                    <h2>My Skill Set:</h2>
-        
-                    <ul>
-                        <li>Web Development fundamentals: HTML, CSS, and Javascript (ES6)</li>
-                        <li>Conversion of mockups into code</li>
-                        <li>Development of a basic full-stack CRUD application from design to deployment using the MEAN stack
-                        </li>
-                        <li>Implementation of external libraries and API's</li>
-                        <li>JQuery, Bootstrap, Angular, NodeJS, NPM, and Git</li>
-                        <li>Basic understanding of object-oriented programming concepts and MVC architecture</li>
-                        <li>Asynchronous Javascript</li>
-                        <li>Mobile-friendly layouts</li>
-                    </ul>
-                </div>
-            </section>
-        
-            <section id="my-work">
-                <h2>My Work</h2>
-        
-                <div id="projects-container">
-                    <!--Render projects here from main.js-->
-                </div>
-            </section>
-        
-            <section id="contact-links">
-                <h2>Contact / Links</h2>
-        
-                <a id="mailto-link" href="mailto:hwrdleung@gmail.com">hwrdleung@gmail.com</a>
-        
-                <div id="links-container">
-                    <a id="copy-email-link">Copy<br>Email</a>
-                    <a id="github-link" href="https://github.com/hwrdleung" target="__blank">Github</a>
-                    <a id="codepen-link" href="https://codepen.io/noodles01/" target="__blank">Codepen</a>
-                    <a id="resume-link">Resume</a>
-                    <a id="code-link">Code Samples</a>
-                </div>
-        
-                <input type="text" value="hwrdleung@gmail.com" id="copy-email-input" style="visibility: hidden">
-            </section>
-        
-            <div id="code-viewer" class="pop-out">
-                <div class="flex-row-between pop-out-top-bar">
-                    <h1>Code Samples</h1>
-                    <button id="code-viewer-close-btn" class="pop-out-close-btn"><i class="fas fa-2x fa-times"></i></button>
-                </div>
-                <!-- Render code viewer here -->
-            </div>
-        
-            <div id="resume-viewer" class="pop-out flex-center">
-                <div class="flex-row-between pop-out-top-bar">
-                    <h1>Resume</h1>
-                    <button id="resume-viewer-close-btn" class="pop-out-close-btn"><i class="fas fa-2x fa-times"></i></button>
-                </div>
-        
-                <iframe src="assets/resume.pdf"></iframe>
-            </div>
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-css.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-html.js"></script>
-            <script src="codemirror/lib/codemirror.js"></script>
-            <script src="codemirror/mode/javascript/javascript.js"></script>
-            <script src="codemirror/mode/xml/xml.js"></script>
-            <script src="codemirror/mode/css/css.js"></script>
-            <script type="module" src="main.js"></script>
-        </body>
-        </html>`,
+<html lang="en">
+  <head>
+    <title>Howard Leung | Portfolio</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css" /> 
+  </head>
+
+  <body>
+    <nav class="flex-row-right">
+      <a href="#about-me">About Me</a>
+      <a href="#my-work">Projects</a>
+      <a href="#contact-links">Contact/Links</a>
+    </nav>
+
+    <section id="splash">
+      <h1 id="name">Howard Leung</h1>
+
+      <div id="splash-textbox" class="flex-center">
+        <span id="typer-container">
+          <!--TextTyper renders here-->
+        </span>
+
+        <span id="cursor">|</span>
+      </div>
+
+      <div class="icons-container flex-row-evenly">
+        <span class="icon-row flex-row-evenly">
+          <i class="fab icon fa-4x fa-html5"></i>
+          <i class="fab icon fa-4x fa-css3-alt"></i>
+          <i class="fab icon fa-4x fa-js"></i>
+        </span>
+
+        <span class="icon-row flex-row-evenly">
+          <i class="fab icon fa-4x fa-react"></i>
+          <i class="fab icon fa-4x fa-node"></i>
+          <img class="icon mongodb" src="assets/icons/mongodb.svg" />
+        </span>
+      </div>
+    </section>
+
+    <section id="welcome">
+      <h2>Hello and welcome to my portfolio!</h2>
+    </section>
+
+    <section id="about-me">
+      <div class="flex-row-evenly">
+        <span><img src="assets/laptop_bg.jpg" /></span>
+
+        <div id="about-me-text">
+          <h2>About Me</h2>
+          <p>
+            I'm a self-taught coder with experience in HTML, CSS, Javascript, React, NodeJS/Express, and MongoDB. By
+            working on full-stack personal projects, I have gained insight into various aspects of web development, to
+            include: idea and conception, wire-frames and planning, front-end code, back-end code, UI/UX design, copy
+            and writing, and deployment procedures. What I enjoy most about web development is learning many different
+            skillsets and putting them all together to create a cohesive, finished product.
+          </p>
+        </div>
+      </div>
+
+      <div id="skillset">
+        <h2>My Skill Set:</h2>
+
+        <ul>
+          <li>Web Development fundamentals: HTML, CSS, and Javascript (ES6)</li>
+          <li>React/Redux, NodeJS/Express, MongoDB</li>
+          <li>Development of full-stack CRUD application from design to deployment</li>
+          <li>Implementation of external libraries and API's</li>
+          <li>NPM, Git, Github</li>
+          <li>Debugging and problem solving</li>
+          <li>Asynchronous Javascript</li>
+          <li>Mobile-friendly layouts</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="my-work">
+      <h2>Projects</h2>
+
+      <div id="projects-container">
+        <!--Render projects here from main.js-->
+      </div>
+    </section>
+
+    <section id="contact-links">
+      <h2>Contact / Links</h2>
+
+      <a id="mailto-link" href="mailto:hwrdleung@gmail.com">hwrdleung@gmail.com</a>
+
+      <div id="links-container">
+        <a id="copy-email-link">Copy<br />Email</a>
+        <a id="github-link" href="https://github.com/hwrdleung" target="__blank">Github</a>
+        <a id="resume-link">Resume</a>
+        <a id="code-link">Code Samples</a>
+      </div>
+
+      <input type="text" value="hwrdleung@gmail.com" id="copy-email-input" style="opacity: 0" />
+    </section>
+
+    <div id="code-viewer" class="pop-out">
+      <div class="flex-row-between pop-out-top-bar">
+        <h1>Code Samples</h1>
+        <button id="code-viewer-close-btn" class="pop-out-close-btn"><i class="fas fa-2x fa-times"></i></button>
+      </div>
+      <!-- Render code viewer here -->
+    </div>
+
+    <div id="resume-viewer" class="pop-out flex-center">
+      <div class="flex-row-between pop-out-top-bar">
+        <h1>Resume</h1>
+        <button id="resume-viewer-close-btn" class="pop-out-close-btn"><i class="fas fa-2x fa-times"></i></button>
+      </div>
+
+      <iframe src="assets/Howard_Leung_Resume.pdf"></iframe>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-html.js"></script>
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/css/css.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
+`,
         "css": `@import url('https://fonts.googleapis.com/css?family=Roboto|Montserrat|Rock+Salt');
 
         /* Define defaults-------- */
