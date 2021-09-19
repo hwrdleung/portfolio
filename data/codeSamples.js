@@ -1,5 +1,5 @@
 export default [
-    {        
+    {
         "name": "Portfolio Source Code",
         "html": `<!DOCTYPE html>
 <html lang="en">
@@ -130,13 +130,15 @@ export default [
       <iframe src="assets/Howard_Leung_Resume.pdf"></iframe>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-css.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-html.js"></script>
+    <script src="node_modules/prettier/standalone.js"></script>
+    <script src="node_modules/prettier/parser-typescript.js"></script>
+    <script src="node_modules/prettier/parser-postcss.js"></script>
+    <script src="node_modules/prettier/parser-html.js"></script>
     <script src="codemirror/lib/codemirror.js"></script>
     <script src="codemirror/mode/javascript/javascript.js"></script>
     <script src="codemirror/mode/xml/xml.js"></script>
     <script src="codemirror/mode/css/css.js"></script>
+    <script src="codemirror/mode/jsx/jsx.js"></script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
@@ -806,9 +808,9 @@ export default [
         
           emailTyper.typeText('Copied');
           setTimeout(() => {
+            emailTyper.clear();
             copyEmailLink.innerHTML = "Copy<br>Email";
           }, 1500);
-        
         });
         
         // Splash section TextTyper controller
@@ -828,7 +830,7 @@ export default [
             if (classList.includes('fa-html5')) splashTyper.typeText('HTML5');
             if (classList.includes('fa-css3-alt')) splashTyper.typeText('CSS3');
             if (classList.includes('fa-js')) splashTyper.typeText('Javascript');
-            if (classList.includes('jquery')) splashTyper.typeText('JQuery');
+            if (classList.includes('fa-react')) splashTyper.typeText('React');
             if (classList.includes('bootstrap')) splashTyper.typeText('Bootstrap');
             if (classList.includes('fa-angular')) splashTyper.typeText('Angular');
             if (classList.includes('mongodb')) splashTyper.typeText('MongoDB');
@@ -843,7 +845,7 @@ export default [
         const resumeLink = document.getElementById('resume-link');
         const resumeViewerContainer = document.getElementById('resume-viewer');
         const resumeViewerCloseBtn = document.getElementById('resume-viewer-close-btn');
-        const resumeViewerClosedPos = '-' + resumeViewerContainer.offsetWidth * 1.5 + 'px';
+        const resumeViewerClosedPos = '-' + resumeViewerContainer.offsetWidth * 3 + 'px';
         
         // On page load, initialize resume viewer to 'closed' position
         resumeViewerContainer.style.left = resumeViewerClosedPos;
@@ -877,7 +879,7 @@ export default [
         const codeLink = document.getElementById('code-link');
         const codeViewerContainer = document.getElementById('code-viewer');
         const codeViewerCloseBtn = document.getElementById('code-viewer-close-btn');
-        const codeViewerClosedPos = '-' + codeViewerContainer.offsetWidth * 1.5 + 'px';
+        const codeViewerClosedPos = '-' + codeViewerContainer.offsetWidth * 3 + 'px';
         let codeViewer = new CodeViewer();
         
         // On page load, initialize Code Viewer to 'closed' position
@@ -930,7 +932,7 @@ export default [
           });
         
           newProject.renderTo(projectsContainer);
-        });
+        });        
         `
     },
     {
@@ -1114,6 +1116,324 @@ export default [
                 clearInterval(this.typer);
             }
         }`
+    },
+    {
+        "name": "React container component",
+        "js": `import React from "react";
+        import { connect } from "react-redux";
+        import FormEditStoreData from "./FormEditStoreData";
+        import FormEditHours from "./FormEditHours";
+        import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+        import { faTimes } from "@fortawesome/free-solid-svg-icons";
+        import { updateBusinessHours, updateStatus, updateContactInfo, updateLogo } from "../../state-management/actions";
+        import "../style.css";
+        import StoreInfo from "./StoreInfo";
+        import StoreStatus from "./StoreStatus";
+        import BusinessHours from "./BusinessHours";
+        import SalesChart from "./SalesChart";
+        import SalesStats from "./SalesStats";
+        import PopularProducts from "./PopularProducts";
+        import moment from "moment";
+        import LogoUploader from "./LogoUploader";
+        
+        const mapStateToProps = (state) => ({
+          ...state,
+        });
+        
+        const mapDispatchToProps = (dispatch) => ({
+          updateBusinessHours: (formData) => dispatch(updateBusinessHours(formData)),
+          updateStatus: (formData) => dispatch(updateStatus(formData)),
+          updateContactInfo: (formData) => dispatch(updateContactInfo(formData)),
+          updateLogo: (imageData) => dispatch(updateLogo(imageData)),
+        });
+        
+        class ViewOverview extends React.PureComponent {
+          constructor() {
+            super();
+            this.state = {
+              editBusinessHours: false,
+              editStoreData: false,
+              timeFrame: "year",
+            };
+          }
+        
+          toggleState = async (property) => {
+            await this.setState({ [property]: !this.state[property] });
+          };
+        
+          render() {
+            return (
+              <div className="dashboard-subview w-100 flex-col-evenly justify-start pb-20px overflow-auto">
+                <div className="w-100 flex-col-evenly">
+                  <div className="text-align-center px-10px">
+                    <h1>Overview</h1>
+                  </div>
+        
+                  <div className="w-100 flex-row-evenly flex-wrap align-start">
+                    <div className="w-100 flex-row-evenly justify-center align-start flex-wrap">
+                      <div className="responsive-container flex-col-evenly">
+                        <div className="content-container w-300px">
+                          <StoreStatus
+                            isOnline={this.props.userReducer.store.isOnline}
+                            isCartEnabled={this.props.userReducer.store.isCartEnabled}
+                            isCurbsideEnabled={this.props.userReducer.store.isCurbsideEnabled}
+                            save={this.props.updateStatus}
+                          />
+                        </div>
+        
+                        <div className="content-container w-300px">
+                          <LogoUploader logoImgSrc={this.props.userReducer.store.logo.src} onSubmit={this.props.updateLogo} />
+                        </div>
+        
+                        <div className="content-container w-300px">
+                          <StoreInfo user={this.props.userReducer} editStoreData={() => this.toggleState("editStoreData")} />
+                        </div>
+        
+                        <div className="content-container w-300px">
+                          <BusinessHours
+                            user={this.props.userReducer}
+                            editBusinessHours={() => this.toggleState("editBusinessHours")}
+                          />
+                        </div>
+                      </div>
+        
+                      <div className="responsive-container flex-col-evenly">
+                        <div className="content-container w-300px">
+                          <SalesStats
+                            timeFrame={"day"}
+                            transactions={this.props.userReducer.transactions}
+                            chartWidth={"300px"}
+                          />
+                        </div>
+        
+                        <div className="content-container w-300px">
+                          <PopularProducts user={this.props.userReducer} />
+                        </div>
+                      </div>
+        
+                      <div className="responsive-container flex-col-evenly">
+                        <div className="content-container w-700px flex-col-evenly">
+                          <h1 className="w-100 text-align-center">
+                            {this.state.timeFrame === "year" && "Sales (" + moment().format("YYYY") + ")"}
+                            {this.state.timeFrame === "month" && "Sales (" + moment().format("MMMM YYYY") + ")"}
+                            {this.state.timeFrame === "week" && "Sales (this week)"}
+                          </h1>
+        
+                          <div className="w-100 flex-row-evenly justify-start">
+                            <button className="link px-10px" onClick={() => this.setState({ timeFrame: "year" })}>
+                              This year
+                            </button>
+                            <button className="link px-10px" onClick={() => this.setState({ timeFrame: "month" })}>
+                              This month
+                            </button>
+                            <button className="link px-10px" onClick={() => this.setState({ timeFrame: "week" })}>
+                              This week
+                            </button>
+                          </div>
+        
+                          <div className="w-100 h-300px mt-20px">
+                            <SalesChart timeFrame={this.state.timeFrame} transactions={this.props.userReducer.transactions} />
+                          </div>
+                        </div>
+        
+                        <div className="content-container w-700px flex-col-evenly">
+                          <SalesStats
+                            transactions={this.props.userReducer.transactions}
+                            timeFrame={this.state.timeFrame}
+                            chartWidth={"300px"}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                {this.state.editStoreData && (
+                  <div className="floating-modal flex-col-evenly">
+                    <div className="modal-content-container w-400px flex-col-evenly justify-start">
+                      <div className="content-header w-100 flex-row-between">
+                        <div></div>
+                        <h1>Edit contact & social</h1>
+                        <FontAwesomeIcon
+                          icon={faTimes}
+                          className="close-icon"
+                          onClick={() => this.toggleState("editStoreData")}
+                        />
+                      </div>
+        
+                      <div className="content-body content-form w-100">
+                        <FormEditStoreData
+                          done={() => this.toggleState("editStoreData")}
+                          user={this.props.userReducer}
+                          onSubmit={this.props.updateContactInfo}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+        
+                {this.state.editBusinessHours && (
+                  <div className="floating-modal flex-col-evenly">
+                    <div className="modal-content-container w-400px flex-col-evenly justify-start">
+                      <div className="content-header w-100 flex-row-between">
+                        <div></div>
+                        <h1>Edit business hours</h1>
+                        <FontAwesomeIcon
+                          icon={faTimes}
+                          className="close-icon"
+                          onClick={() => this.toggleState("editBusinessHours")}
+                        />
+                      </div>
+                      <div className="content-body content-form w-100">
+                        <FormEditHours
+                          user={this.props.userReducer}
+                          done={() => this.toggleState("editBusinessHours")}
+                          onSubmit={this.props.updateBusinessHours}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          }
+        }
+        
+        export default connect(mapStateToProps, mapDispatchToProps)(ViewOverview);`
+    },
+    {
+        "name": "React log-in form",
+        "js": `
+        import React from "react";
+import { faSpinner, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { isRequired } from "../FormValidations";
+
+class FormLogin extends React.PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+      password: "",
+      usernameErrors: [],
+      passwordErrors: [],
+      responseErrors: [],
+      isLoading: false,
+    };
+  }
+
+  hasErrors = async () => {
+    await this.validate("username", this.state.username);
+    await this.validate("password", this.state.password);
+    if (this.state.usernameErrors.length) return true;
+    if (this.state.passwordErrors.length) return true;
+    if (this.state.responseErrors.length) return true;
+    return false;
+  };
+
+  handleChange = async (e) => {
+    e.persist();
+    await this.setState({ [e.target.name]: e.target.value, responseErrors: [] });
+    this.validate(e.target.name, e.target.value);
+  };
+
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    if (await this.hasErrors()) return;
+
+    await this.setState({ isLoading: true });
+
+    let formData = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+
+    let res = await this.props.handleSubmit(formData);
+
+    if (!res.data.success) await this.setState({ responseErrors: [res.data.message] });
+    await this.setState({ isLoading: false });
+  };
+
+  validate = async (name, value) => {
+    switch (name) {
+      case "username":
+        let usernameErrors = [];
+        if (isRequired(value)) usernameErrors.push(isRequired(value));
+        await this.setState({ usernameErrors: usernameErrors });
+        break;
+
+      case "password":
+        let passwordErrors = [];
+        if (isRequired(value)) passwordErrors.push(isRequired(value));
+        await this.setState({ passwordErrors: passwordErrors });
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  render() {
+    return (
+      <form className="form-login flex-col-evenly w-100 h-100" onSubmit={this.handleSubmit} onChange={this.handleChange}>
+        <div className="content-header w-100 flex-row-between">
+          <div></div>
+          <h1 className="bold">Sign in</h1>
+          <FontAwesomeIcon icon={faTimes} className="icon-red close-icon clickable" onClick={this.props.done} />
+        </div>
+
+        <div className="w-100 flex-col-evenly">
+          {this.state.responseErrors.map((error, i) => (
+            <p key={i} className="small-text alert-text">
+              {error}
+            </p>
+          ))}
+        </div>
+
+        <div className="flex-col-evenly justify-start w-100 content-body">
+          <section className="w-100 flex-col-evenly">
+            <label className="w-100 text-align-left mt-10px">User name:</label>
+            <input className=" w-100" type="text" name="username" value={this.state.username} />
+            <div className="w-100 flex-col-evenly align-start">
+              {this.state.usernameErrors.map((error, i) => (
+                <p key={i} className="small-text alert-text">
+                  {error}
+                </p>
+              ))}
+            </div>
+          </section>
+
+          <section className="w-100 flex-col-evenly">
+            <label className="w-100 text-align-left mt-10px">Password:</label>
+            <input className=" w-100" type="password" name="password" value={this.state.password} />
+            <div className="w-100 flex-col-evenly align-start">
+              {this.state.passwordErrors.map((error, i) => (
+                <p key={i} className="small-text alert-text">
+                  {error}
+                </p>
+              ))}
+            </div>
+          </section>
+
+          {!this.state.isLoading && (
+            <button className="btn-green btn-lg shadow-md mt-20px h-50px w-100" type="submit">
+              Sign in
+            </button>
+          )}
+
+          {this.state.isLoading && (
+            <div className="w-100 h-50px mt-20px flex-row-evenly justify-center">
+              <FontAwesomeIcon icon={faSpinner} className="loader-icon" />
+            </div>
+          )}
+        </div>
+      </form>
+    );
+  }
+}
+
+export default FormLogin;
+        `
     }
 ]
 
