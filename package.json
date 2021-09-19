@@ -1,0 +1,23 @@
+{
+  "name": "hwrdleung.github.io",
+  "version": "1.0.0",
+  "description": "\"# hwrdleung.github.io\"",
+  "main": "main.js",
+  "dependencies": {
+    "prettier": "^2.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hwrdleung/hwrdleung.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hwrdleung/hwrdleung.github.io/issues"
+  },
+  "homepage": "https://github.com/hwrdleung/hwrdleung.github.io#readme"
+}

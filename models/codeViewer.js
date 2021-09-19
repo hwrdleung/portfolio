@@ -128,15 +128,24 @@ export default class CodeViewer {
       case "HTML":
         this.codeMirror.setOption('mode', 'xml');
         this.codeMirror.setOption('htmlMode', true);
-        this.codeMirror.setValue(html_beautify(currentProject.html));
+        this.codeMirror.setValue(prettier.format(currentProject.html, {
+          parser: 'html',
+          plugins: prettierPlugins
+        }));
         break;
       case "CSS":
         this.codeMirror.setOption('mode', 'css');
-        this.codeMirror.setValue(css_beautify(currentProject.css));
+        this.codeMirror.setValue(prettier.format(currentProject.css, {
+          parser: 'css',
+          plugins: prettierPlugins
+        }));
         break;
       case "JS":
         this.codeMirror.setOption('mode', 'javascript');
-        this.codeMirror.setValue(js_beautify(currentProject.js));
+        this.codeMirror.setValue(prettier.format(currentProject.js, {
+          parser: 'typescript',
+          plugins: prettierPlugins
+        }));
         break;
     }
   }
