@@ -3,7 +3,7 @@ export default [{
     projectLink: 'https://integrationpos.herokuapp.com/',
     pages: [{
         imageUrl: 'assets/project_images/integration01.png',
-        text: `IntegrationPOS is an all-in-one system designed to help small-business restaurants get their businesses online.  Features include a public online storefront with a fully functioning cart, user dashboard, product/order management systems, built-in POS, and more.`
+        text: `IntegrationPOS is a personal project that I created to further practice and improve my web development skills.  It's an all-in-one system designed to help small-business restaurants get their businesses online.  Features include a public online storefront with a fully functioning cart, user dashboard, product/order management systems, built-in POS, and more.`
     },
     {
         imageUrl: 'assets/project_images/integration02.png',
@@ -31,7 +31,7 @@ export default [{
     },
     {
         imageUrl: 'assets/project_images/integration01.png',
-        text: `I created IntegrationPOS to further practice and improve my web development skills.  Working on this project gave me insight into each step of the development process from idea conception, to design, to implementation, and finally to deployment.  IntegrationPOS was built with React/redux, NodeJS/Express, MongoDB, Socket.io for real-time data transfer, and Firebase storage for image hosting.`
+        text: `Working on IntegrationPOS gave me insight into each step of the development process from idea conception, to design, to implementation, and finally to deployment.  IntegrationPOS was built with React/redux, NodeJS/Express, MongoDB, Socket.io for real-time data transfer, and Firebase storage for image hosting.`
     }
     ]
 }, {
